@@ -1,0 +1,58 @@
+      <div class="global">
+        <img id="adminpic" src="assets/img/adminpng.png" alt="">
+      <div class="modal-body">
+        <div class="card">
+          <h4 class="card-title">product update <img src="assets/img/update.png" id="imgu" alt=""></h4>
+        <div class="card-body">
+            <form  [formGroup]="form" id="sub" (ngSubmit)="updatedata()" >
+                <div class="row">
+                  <div class="col-lg-4 mb-3">
+                    <label for="product">product id</label>
+                    <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="id" 
+                     formControlName="id_produit" [(ngModel)]="prod.id_produit">
+                  </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product">product name</label>
+                  <input type="text" class="form-control" id="product" aria-describedby="name" placeholder="name" 
+                   formControlName="lib_produit" [(ngModel)]="prod.lib_produit">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="price">price</label>
+                  <input type="price" class="form-control" id="price" placeholder="price" 
+                  formControlName="prix_produit" [(ngModel)]="prod.prix_produit">
+                </div>
+                <div class=" col-md-5">
+                    <label for="option">category</label>
+                   <select name="id_cat" id="option" class="form-control"  formControlName="id_cat" [(ngModel)]="prod.id_cat">
+                        <option  value="1" selected disabled> -- </option>
+                        <option formControlName="Laptops" value="Laptops">Laptops</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Monitors">Monitors</option>
+                        <option value="Audio">Audio</option>
+                    </select>  
+                </div> 
+                  </div>
+                  <div class="row"><div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" 
+                    formControlName="mail_admin" [(ngModel)]="prod.mail_admin">
+                  </div>
+                </div>
+                <div class="row"><div class="form-outline mb-4">
+                  <label class="form-label" for="desc">description</label>
+                    <textarea class="form-control" id="desc" rows="4" 
+                    formControlName="description" [(ngModel)]="prod.description"></textarea>
+                    
+                  </div></div>
+                <div class="row"><label class="form-label" for="img">image upload</label>
+                    <input type="file" class="form-control" id="img"   formControlName="img_produit" /></div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" form="sub" class="btn btn-primary" >update</button>
+        </div>
+      
+</div>
+</div>
+</div>
